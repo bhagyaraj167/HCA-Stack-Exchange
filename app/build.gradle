@@ -5,7 +5,9 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.0"
-
+    android.defaultConfig.manifestPlaceholders = [
+            'appAuthRedirectScheme': 'com.example.hca_stackexchange'
+    ]
     defaultConfig {
         applicationId "com.example.hca_stackexchange"
         minSdkVersion 16
@@ -60,5 +62,7 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    implementation 'net.openid:appauth:0.7.0'
 
 }
